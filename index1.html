@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Ben's Cafe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body style="background-image: url('{{ url_for('static', filename='images/coffee-background.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
+    <!-- Background Overlay -->
+    <div class="overlay"></div>
+
+    <!-- Main Content -->
+    <header>
+        Ben's Cafe
+    </header>
+
+    <div class="container">
+        <h2>Welcome to Ben's Cafe Inventory</h2>
+        
+        <div class="options">
+            <a href="{{ url_for('index') }}">
+                <button>Order</button>
+            </a>
+            <a href="{{ url_for('enquire') }}">
+                <button>Enquire</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

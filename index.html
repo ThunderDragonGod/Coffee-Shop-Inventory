@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory - Ben's Cafe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Add Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        Ben's Cafe Inventory
+    </header>
+
+    <div class="container">
+        <h2>Inventory List</h2>
+
+        <!-- Display Inventory Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Quantity (in ML)</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in inventory %}
+                    <tr>
+                        <td>{{ item['item_name'] }}</td>
+                        <td>{{ item['quantity'] }}</td>
+                        <td>
+                            <a href="{{ url_for('update_item', item_id=item['_id']) }}">
+                                <button><i class="fas fa-edit icon"></i>Update</button>
+                            </a>
+                            <form action="{{ url_for('delete_item') }}" method="POST" style="display:inline;">
+                                <input type="hidden" name="item_id" value="{{ item['_id'] }}">
+                                <button type="submit"><i class="fas fa-trash-alt icon"></i>Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <br>
+
+        <!-- Link to Add New Item -->
+        <a href="{{ url_for('add_item') }}">
+            <button><i class="fas fa-plus icon"></i>Add New Item</button>
+        </a>
+    </div>
+</body>
+</html>

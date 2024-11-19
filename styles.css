@@ -1,0 +1,124 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('images/background.jpg');  /* Update this path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #3e2723;  /* Dark coffee color */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+/* Container for the page */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 50px 0;
+    background-color: rgba(255, 255, 255, 0.8);  /* Slight white background for readability */
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1; /* Ensures content is above the overlay */
+}
+
+/* Header Styling */
+header {
+    background-color: rgba(111, 79, 49, 0.9);  /* Semi-transparent coffee brown */
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    border-bottom: 5px solid #3e2723;  /* Darker coffee */
+    position: relative;
+    z-index: 1;
+}
+
+/* Button Styling */
+button {
+    background-color: #6f4f31;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #3e2723;
+}
+
+a {
+    color: #6f4f31;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+a:hover {
+    color: #3e2723;
+}
+
+/* Additional aesthetic touches */
+h2 {
+    font-size: 2em;
+    color: #3e2723;
+    margin-bottom: 30px;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Shadow and padding for buttons */
+.options button {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.options button:hover {
+    transform: translateY(-5px);
+}
+
+/* Styling for background */
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);  /* Dark overlay for better text visibility */
+}
+
+/* Coffee Image Styling */
+.image-section {
+    margin-top: 30px;
+}
+
+.coffee-img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer Styling */
+footer {
+    background-color: rgba(111, 79, 49, 0.9);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    z-index: 1;
+}
